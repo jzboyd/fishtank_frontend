@@ -12,7 +12,7 @@ const Tabs() {
     <Tab.Navigator>
       <Tab.Screen 
       name="Home" 
-      component={HomeScreen}
+      component={Home}
       options={{ tabBarIcon: ({focused}) =>
      }}
       />
