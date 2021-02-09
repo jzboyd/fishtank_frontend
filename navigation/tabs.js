@@ -1,0 +1,24 @@
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
+
+import { Home } from "../screens";
+
+
+const Tab = createBottomTabNavigator();
+
+const Tabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen 
+      name="Home" 
+      component={HomeScreen}
+      options={{ tabBarIcon: ({focused}) =>
+     }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+
+export default Tabs;
