@@ -5,7 +5,7 @@ import { Button, Input } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 
 
-const Login = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -57,7 +57,7 @@ const Login = ({ navigation }) => {
     );
 };
 
-export default Login;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
