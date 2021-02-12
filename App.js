@@ -10,8 +10,7 @@ import HomeScreen  from "./screens/HomeScreen";
 import ScheduleScreen  from "./screens/ScheduleScreen";
 import MessageScreen  from "./screens/MessageScreen";
 import ProfileScreen  from "./screens/ProfileScreen";
-import Login from './screens/LoginScreen';
-import LoginScreen from './screens/LoginScreen';
+import MaintenanceScreen from './screens/MaintenanceScreen';
 
 
 
@@ -35,7 +34,7 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="FISH TANK" component={HomeScreen} />
-      <HomeStack.Screen name="Schedule" component={ScheduleScreen} />
+      <HomeStack.Screen name="Maintenance" component={MaintenanceScreen} />
     </HomeStack.Navigator>
   );
 }

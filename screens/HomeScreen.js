@@ -8,14 +8,14 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const HomeScreen = ({ navigation }) => {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Choose Fish Tank Services Below</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('MaintenanceSreen')}>
+        <Text>Professional Fish Tank Services</Text>
+        
+        <TouchableOpacity onPress={() => navigation.navigate('Maintenance')}>
         <Card>  
-        <Image source={require('../images/Fishtankafter.png')} />
+        {/* <Image source={require('../images/maintenance.png')} /> */}
     <Card.Title>MAINTENANCE</Card.Title>
     <Card.Divider/>
   </Card>
-  
   </TouchableOpacity>
  
 
