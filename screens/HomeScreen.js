@@ -11,26 +11,38 @@ const HomeScreen = ({ navigation }) => {
         <Text>Professional Fish Tank Services</Text>
         
         <TouchableOpacity onPress={() => navigation.navigate('Maintenance')}>
-        <Card>  
+        <Card style={styles}>  
         {/* <Image source={require('../images/maintenance.png')} /> */}
     <Card.Title>MAINTENANCE</Card.Title>
     <Card.Divider/>
   </Card>
   </TouchableOpacity>
  
-
-  <Card>
+  <TouchableOpacity onPress={() => navigation.navigate('Maintenance')}>
+        <Card>  
+        {/* <Image source={require('../images/maintenance.png')} /> */}
     <Card.Title>INSTALLATION</Card.Title>
     <Card.Divider/>
   </Card>
-  <Card>
-    <Card.Title>DECORATION</Card.Title>
+  </TouchableOpacity>
+
+  <TouchableOpacity onPress={() => navigation.navigate('Maintenance')}>
+        <Card>  
+        {/* <Image source={require('../images/maintenance.png')} /> */}
+    <Card.Title>DECORATE</Card.Title>
     <Card.Divider/>
   </Card>
-  <Card>
+  </TouchableOpacity>
+
+  <TouchableOpacity onPress={() => navigation.navigate('Maintenance')}>
+        <Card>  
+        {/* <Image source={require('../images/maintenance.png')} /> */}
     <Card.Title>SERVICE</Card.Title>
     <Card.Divider/>
   </Card>
+  </TouchableOpacity>
+
+  
         <Button
           title="Go to Schedule"
           onPress={() => navigation.navigate('Schedule')}

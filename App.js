@@ -1,16 +1,19 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons, MaterialIcons, AntDesign } from '@expo/vector-icons';
-import { Card, ListItem, Header} from 'react-native-elements';
+import { Card, ListItem, Header, Input} from 'react-native-elements';
+
 
 import HomeScreen  from "./screens/HomeScreen";
 import ScheduleScreen  from "./screens/ScheduleScreen";
 import MessageScreen  from "./screens/MessageScreen";
 import ProfileScreen  from "./screens/ProfileScreen";
 import MaintenanceScreen from './screens/MaintenanceScreen';
+import LoginScreen from './screens/LoginScreen';
+
 
 
 
@@ -26,6 +29,21 @@ function DetailsScreen() {
 
 
 
+function LogoTitle() {
+  return (
+    <Image
+      style={{ 
+        width: 45, 
+        height: 45,
+        marginBottom: 12,
+       }}
+      source={require('./images/FishLogo.png')}
+    />
+  );
+}
+
+
+
 
 const HomeStack = createStackNavigator();
 
@@ -33,7 +51,17 @@ const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="FISH TANK" component={HomeScreen} />
+      <HomeStack.Screen name="Home" component={HomeScreen} 
+      options={{ 
+        headerTitle: props => <LogoTitle {...props} />,
+        headerLeft: () => (
+          <MaterialIcons style={{
+            marginLeft: 10,
+          }} 
+          name="location-pin" size={35} color="#005493" />
+        ), 
+      }}
+      />
       <HomeStack.Screen name="Maintenance" component={MaintenanceScreen} />
     </HomeStack.Navigator>
   );
@@ -67,10 +95,11 @@ function ProfileStackScreen() {
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen name="Profile" component={ProfileScreen} />
-      <ProfileStack.Screen name="Details" component={DetailsScreen} />
+      <ProfileStack.Screen name="Login" component={LoginScreen} />
     </ProfileStack.Navigator>
   );
 }
+
 
 
 const Tab = createBottomTabNavigator();
@@ -131,12 +160,18 @@ function MyTabs() {
   );
 }
 
+const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
     <NavigationContainer>
-
-      <MyTabs />  
+    <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }}/>
+    </Stack.Navigator>
+    
+      {/* <MyTabs />   */}
     </NavigationContainer>
   );
 }

@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useLayoutEffect, useState } from 'react';
 import { KeyboardAvoidingView, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
 
 
 const LoginScreen = ({ navigation }) => {
@@ -33,6 +33,7 @@ const LoginScreen = ({ navigation }) => {
         
           <Input
             placeholder="Email" 
+            leftIcon={ <MaterialIcons name="email" size={24} color="#005493"/> }
             autoFocus
             type="email"
             value={email}
@@ -40,13 +41,14 @@ const LoginScreen = ({ navigation }) => {
           />
           <Input
             placeholder="Password"
+            leftIcon={ <MaterialIcons name="lock" size={24} color="#005493" /> }
             secureTextEntry
             type="password"
             value={password}
             onChangeText={(text) => setPassword(text)}
           />
         </View> 
-        <TouchableOpacity raised onPress={signIn} style={styles.loginButton}>
+        <TouchableOpacity raised onPress={() => navigation.navigate('Home')} style={styles.loginButton}>
         <Text style={styles.loginButtonText}>Log In</Text>
       </TouchableOpacity>
       <TouchableOpacity raised onPress={() => navigation.navigate('Signup')} style={styles.signupButton}>
