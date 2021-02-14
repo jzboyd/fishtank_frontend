@@ -13,6 +13,8 @@ import MessageScreen  from "./screens/MessageScreen";
 import ProfileScreen  from "./screens/ProfileScreen";
 import MaintenanceScreen from './screens/MaintenanceScreen';
 import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+
 
 
 
@@ -168,6 +170,7 @@ export default function App() {
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
       <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }}/>
     </Stack.Navigator>
     

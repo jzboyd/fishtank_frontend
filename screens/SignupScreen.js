@@ -3,9 +3,10 @@ import { StyleSheet, View } from 'react-native';
 import { KeyboardAvoidingView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button, Input, Text } from 'react-native-elements';
+import { auth } from '../firebase';
 
 const Signup = ({ navigation }) => {
-    const [firstName, setfirstName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [postalCode, setpostalCode] = useState("");
@@ -15,9 +16,22 @@ const Signup = ({ navigation }) => {
         navigation.setOptions({
             headerBackTitle:'Back to Login',
     });
-}, [navigation])
+}, [navigation]);
 
-    const register = () => {}
+    const Signup = () => {
+        auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((authUser) => {
+            authUser.user.update({
+                displayName: name,
+                photoURL:
+                imageUrl ||
+                "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png"
+            })
+        })
+        .catch((error) => alert(error.message));
+    };
+
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <StatusBar style="light" />
@@ -27,10 +41,10 @@ const Signup = ({ navigation }) => {
                 </Text>
                 <View style={styles.inputContainer}>
                     <Input 
-                    placeholder="First Name" 
+                    placeholder="Name" 
                     autoFocus type='text' 
-                    value={firstName}
-                    onChangeText={(text) => setfirstName(text)} />
+                    value={name}
+                    onChangeText={(text) => setName(text)} />
                     <Input 
                     placeholder="E-mail" 
                     type="email"        
