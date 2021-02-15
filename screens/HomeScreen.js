@@ -201,7 +201,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#fff',
   },
-  
   sliderContainer: {
     height: 200,
     width: '95%',
