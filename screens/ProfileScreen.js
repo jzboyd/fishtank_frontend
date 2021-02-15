@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialCommunityIcons, MaterialIcons, AntDesign } from '@expo/vector-icons';
 import { ListItem, Avatar } from "react-native-elements";
@@ -16,23 +16,23 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.userInfoSection}>
-        <View style={{flexDirection: 'row', marginTop: 15 }}>
-          <Avatar>
-          <MaterialIcons name="person-add" size={24} color="black" />
-          </Avatar>
-        </View>
-      </View>
-      <Text>Profile screen</Text>
+      <View style={{ alignSelf: 'center'}}>
+        <View style={styles.profileImage}>
+          <Image 
+          source={require('../images/FishLogo.png')}
+          style={styles.image}
+          resizeMode='center'></Image>
+        
+     
+      
+
+     </View>
+  </View>
+
 
       <TouchableOpacity raised onPress={signOutUser} style={styles.signOutButton}>
-        <Text style={styles.signOutButtonText}>Sign Out</Text>
-      </TouchableOpacity>
-  
-      {/* <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('Login')}
-      /> */}
+      <Text style={styles.signOutButtonText}>Sign Out</Text>
+    </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -40,6 +40,9 @@ const ProfileScreen = ({ navigation }) => {
 export default ProfileScreen
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   signOutButton: {
     backgroundColor: "#005493",
     padding: 20,

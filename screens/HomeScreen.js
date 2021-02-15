@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
           fontWeight: 'bold',
           color: '#005493',
           marginBottom: 3,
-          }}>Professional Fish Tank Services</Text>
+          }}>My Fish Tank Needs..</Text>
           </View>
 
           
@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation }) => {
           fontSize: 20,
           fontWeight: 'bold',
           marginBottom: 3,
-          color: 'black'}}>DECORATE</Text>
+          color: 'black'}}>DECORATION</Text>
         <Image 
           source={require('../images/FishLogo.png')}
           
@@ -93,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
           fontSize: 20,
           fontWeight: 'bold',
           marginBottom: 3,
-          color: 'black'}}>INSTALL</Text>
+          color: 'black'}}>INSTALLATION</Text>
         <Image 
           source={require('../images/FishLogo.png')}
           resizeMode='cover'
@@ -193,13 +193,13 @@ const styles = StyleSheet.create({
   card: {
     height: 200,
     width: 200,
-  
   },
   cardImg: {
     height: 150,
     width: 150,
     alignSelf: 'center',
     borderRadius: 10,
+    backgroundColor: '#fff',
   },
   
   sliderContainer: {
