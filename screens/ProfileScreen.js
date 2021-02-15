@@ -14,20 +14,26 @@ const ProfileScreen = ({ navigation }) => {
     })
  }
 
-
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.userInfoSection}>
+        <View style={{flexDirection: 'row', marginTop: 15 }}>
+          <Avatar>
+          <MaterialIcons name="person-add" size={24} color="black" />
+          </Avatar>
+        </View>
+      </View>
       <Text>Profile screen</Text>
 
       <TouchableOpacity raised onPress={signOutUser} style={styles.signOutButton}>
         <Text style={styles.signOutButtonText}>Sign Out</Text>
       </TouchableOpacity>
   
-      <Button
+      {/* <Button
         title="Go to Login"
         onPress={() => navigation.navigate('Login')}
-      />
-    </View>
+      /> */}
+    </SafeAreaView>
   );
 }
 

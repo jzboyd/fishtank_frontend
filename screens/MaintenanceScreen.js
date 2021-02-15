@@ -1,9 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+
+
 const MaintenanceScreen = () => {
     return (
         <View>
+            
             
             <Text>MaintenanceScreen</Text>
         </View>

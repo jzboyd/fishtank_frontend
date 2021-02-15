@@ -38,7 +38,7 @@ const LoginScreen = ({ navigation }) => {
         />
         <View style={styles.textContainer}>
         <Text style={{color: '#888', fontSize: 28}}>
-          FISH TANKS
+          FISH TANK
         </Text>
         </View>
         <View style={styles.inputContainer}>
