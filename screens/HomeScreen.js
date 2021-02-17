@@ -29,15 +29,15 @@ const HomeScreen = ({ navigation }) => {
     />
     </View>
     
-    <View style={{ marginTop: 60 }}>
+    <View style={{ marginTop: 70 }}>
     <Text 
         style={{ 
           alignSelf: 'center',
-          fontSize: 25,
+          fontSize: 30,
           fontWeight: 'bold',
           color: '#005493',
-          marginBottom: 3,
-          }}>My Fish Tank Needs..</Text>
+          marginBottom: 1,
+          }}>My Fish Tank Needs...</Text>
           </View>
 
           
@@ -54,7 +54,7 @@ const HomeScreen = ({ navigation }) => {
           fontSize: 20,
           fontWeight: 'bold',
           marginBottom: 3,
-          color: 'black'}}>MAINTENANCE</Text>
+          color: 'black'}}>Maintenance</Text>
         <Image 
           source={require('../images/FishLogo.png')}
           resizeMode='cover'
@@ -67,13 +67,13 @@ const HomeScreen = ({ navigation }) => {
   <View style={styles.card}>
   
         <TouchableOpacity 
-        onPress={() => navigation.navigate('Maintenance')}>
+        onPress={() => navigation.navigate('Decoration')}>
         <Text style={{ 
           alignSelf: 'center',
           fontSize: 20,
           fontWeight: 'bold',
           marginBottom: 3,
-          color: 'black'}}>DECORATION</Text>
+          color: 'black'}}>Decoration</Text>
         <Image 
           source={require('../images/FishLogo.png')}
           
@@ -87,13 +87,13 @@ const HomeScreen = ({ navigation }) => {
   <View style={styles.card}>
     
         <TouchableOpacity 
-        onPress={() => navigation.navigate('Maintenance')}>
+        onPress={() => navigation.navigate('Installation')}>
         <Text style={{ 
           alignSelf: 'center',
           fontSize: 20,
           fontWeight: 'bold',
           marginBottom: 3,
-          color: 'black'}}>INSTALLATION</Text>
+          color: 'black'}}>Installation</Text>
         <Image 
           source={require('../images/FishLogo.png')}
           resizeMode='cover'
@@ -102,19 +102,17 @@ const HomeScreen = ({ navigation }) => {
   </TouchableOpacity>
 
   </View>
-
-
- 
         
   <View style={styles.card}>
     
     <TouchableOpacity 
-    onPress={() => navigation.navigate('Maintenance')}>
+    onPress={() => navigation.navigate('Service')}>
     <Text style={{ 
       alignSelf: 'center',
       fontSize: 20,
       fontWeight: 'bold',
-      color: 'black'}}>SERVICE</Text>
+      marginBottom: 3,
+      color: 'black'}}>Service</Text>
     <Image 
       source={require('../images/FishLogo.png')}
       resizeMode='cover'
@@ -130,7 +128,7 @@ const HomeScreen = ({ navigation }) => {
       <Swiper 
       height={200}
       autoplay
-      autoplayTimeout={7}
+      autoplayTimeout={6}
       showsPagination={false}
       >
         <View style={styles.slide}>
@@ -181,18 +179,35 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingTop: 10,
     width: '95%',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 4,
   },
   cardContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '95%',
     alignSelf: 'center',
-    marginTop: 30,
+    marginTop: 25,
   },
  
   card: {
     height: 200,
     width: 200,
+    shadowColor: "#000",
+shadowOffset: {
+	width: 4,
+	height: 4,
+},
+shadowOpacity: 0.4,
+shadowRadius: 3,
+
+elevation: 5,
   },
   cardImg: {
     height: 150,
@@ -207,14 +222,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 10,
-   
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 4,
   },
   slide: {
     flex: 1,
     justifyContent: 'center',
     backgroundColor: 'transparent',
     borderRadius: 10,
-
 
   },
   sliderImage: {

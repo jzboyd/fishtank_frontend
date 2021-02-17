@@ -1,12 +1,31 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View, Image } from 'react-native'
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialCommunityIcons, MaterialIcons, AntDesign } from '@expo/vector-icons';
-import { ListItem, Avatar } from "react-native-elements";
+import { ListItem, Avatar, Icon } from "react-native-elements";
 import { auth, db } from '../firebase';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Title } from 'react-native-paper';
-// import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
+const list =[
+  {
+      title: 'Account',
+  },
+  {
+    title: 'Change Password',
+  },
+  {
+    title: 'Payment',
+  },
+  {
+    title: 'Promos',
+  },
+  {
+    title: 'Notifications',
+  },
+  {
+
+    title: 'Support',
+  }
+]
 
 
 
@@ -31,18 +50,29 @@ const ProfileScreen = ({ navigation }) => {
         <MaterialIcons name="add-circle" size={40} color="black"></MaterialIcons>
         </View>
         <Text style={styles.name}>Joel Zisholtz</Text>
-        <View></View>
+        <View>
+          
+        </View>
   </View>
+  <View style={styles.listInfo}>
+  {
+    list.map((item, i) => (
+      <ListItem key={i} bottomDivider>
+        <Icon name={item.icon} />
+        <ListItem.Content>
+          <ListItem.Title>{item.title}</ListItem.Title>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
+    ))
+  }
+</View> 
 
 <View>
-  <Title style={styles.title}></Title>
-  
-  
-</View>
-
       <TouchableOpacity raised onPress={signOutUser} style={styles.signOutButton}>
-      <Text style={styles.signOutButtonText}>Sign Out</Text>
+      <Text style={styles.signOutButtonText}>Log Out</Text>
     </TouchableOpacity>
+    </View>
     </SafeAreaView>
   );
 }
@@ -54,7 +84,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   userInfoSection: {
-    left: 10,
     position: 'absolute',
     width: '100%',
     top: 15,
@@ -64,32 +93,36 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
+
   },
   profileImage: {
     width: 120,
     height: 120,
     borderRadius: 100,
     overflow: 'hidden',
-    marginLeft: 15,
+    alignSelf: 'center',
+    marginBottom: 15,
+    
   },
   name: {
-    position: 'absolute',
+    alignSelf: 'center',
     fontWeight: 'bold',
     fontSize: 30,
-    left: 190,
-    height: 50,
-    bottom: 30,
   },
   add: {
     backgroundColor: '#fff',
     position: 'absolute',
-    bottom: 10,
-    left: 125,
+    bottom: 50,
+    left: 240,
     width: 40,
     height: 40,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  listInfo:  {
+    marginTop: 200,
+
   },
   signOutButton: {
     backgroundColor: "#005493",
@@ -98,7 +131,7 @@ const styles = StyleSheet.create({
     width: 150,
     position: 'absolute',
     alignItems: 'center',
-    top: 630,
+    top: 160,
     alignSelf: 'center',
   },
   signOutButtonText: {

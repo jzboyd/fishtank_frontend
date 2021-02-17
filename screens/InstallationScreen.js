@@ -1,11 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { Button, StyleSheet, Text, View, Image, Linking, SafeAreaView } from 'react-native';
 import { Card, ListItem, Header, Icon } from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-
-
-
 
 const list =[
     {
@@ -20,22 +15,11 @@ const list =[
     {
       title: 'Filter Type',
     },
-    {
-      title: 'Food Type',
-    },
-    {
-      title: 'Replacement Parts',
-    },
-    {
-      title: 'Cleaning',
-    },
-    {
-      title: 'Water Test'
-    }
+   
 ]
 
     
-const MaintenanceScreen = () => {
+const InstallationScreen = () => {
     return (
         <View>
             <Text style={{ 
@@ -45,7 +29,7 @@ const MaintenanceScreen = () => {
           color: '#005493',
           marginTop: 10,
           marginBottom: 10,
-          }}>Select Maintenance Options</Text>
+          }}>Select Installation Options</Text>
           
           
             <View>
@@ -71,6 +55,6 @@ const MaintenanceScreen = () => {
     )
 }
 
-export default MaintenanceScreen
+export default InstallationScreen
 
 const styles = StyleSheet.create({})
